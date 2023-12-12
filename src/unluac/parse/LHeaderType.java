@@ -340,9 +340,10 @@ class LHeaderType51 extends LHeaderType {
     parse_int_size(buffer, header, s);
     parse_size_t_size(buffer, header, s);
     parse_instruction_size(buffer, header, s);
-    parse_number_size(buffer, header, s);
-    parse_number_integrality(buffer, header, s);
-    s.number = new LNumberType(s.lNumberSize, s.lNumberIntegrality, LNumberType.NumberMode.MODE_NUMBER);
+    parse_integer_size(buffer, header, s);
+    parse_float_size(buffer, header, s);
+    s.linteger = new LNumberType(s.lIntegerSize, true, LNumberType.NumberMode.MODE_INTEGER);
+    s.lfloat = new LNumberType(s.lFloatSize, false, LNumberType.NumberMode.MODE_FLOAT);
   }
   
   @Override

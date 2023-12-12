@@ -51,9 +51,11 @@ class LConstantType50 extends LConstantType {
       case 1:
         return header.bool.parse(buffer, header);
       case 3:
-        return header.number.parse(buffer, header);
+        return header.lfloat.parse(buffer, header);
       case 4:
         return header.string.parse(buffer, header);
+      case 254:
+        return header.linteger.parse(buffer, header);
       default:
         throw new IllegalStateException();
     }
